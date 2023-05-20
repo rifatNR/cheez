@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CHEEZ</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/f868734c05.js" crossorigin="anonymous"></script>
+        <link href="/dist/output.css" rel="stylesheet">
+        <link rel="icon" href="/img/favicon.ico">
+    </head>
+    <body>
+
+        <section id="banner">
+            <div class="w-full h-[250px] md:h-[500px] overflow-hidden relative">
+                <img src="/img/banner.jpg" alt="Banner" class="w-full a-center">
+                <div class="h-full w-full bg-black a-center opacity-[0.5]"></div>
+            </div>
+        </section>
+
+        <section id="buttons" class="my-5 max-w-lg mx-5 md:mx-auto">
+            <div class="grid grid-cols-12 gap-5 rubik-font">
+                <a href="" class="button-style">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                    <div>Menu Items</div>
+                </a>
+                <a href="" class="button-style">
+                    <i class="fa-sharp fa-solid fa-bell-concierge text-lg"></i>
+                    <div>Order Now</div>
+                </a>
+            </div>
+        </section>
+        
+        <section id="footer" class="bg-[#FCB61B] py-5 rubik-font">
+            <div class="max-w-4xl mx-auto grid grid-cols-12 gap-5">
+                <div class="col-span-12 md:col-span-4 flex flex-col items-center justify-center">
+                    <div>
+                        <div class="text-xl font-semibold mb-2 md:text-left text-center">Stay Connected</div>
+                        <div class="flex items-center justify-center md:justify-start space-x-5 md:space-x-3">
+                            <a href=""><i class="fa-brands fa-facebook text-2xl md:text-xl hover:text-white"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram text-2xl md:text-xl hover:text-white"></i></a>
+                            <a href=""><i class="fa-brands fa-tiktok text-2xl md:text-xl hover:text-white"></i></a>
+                            <a href=""><i class="fa-brands fa-twitter text-2xl md:text-xl hover:text-white"></i></a>
+                            <a href=""><i class="fa-brands fa-youtube text-2xl md:text-xl hover:text-white"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 md:col-span-4 flex flex-col items-center justify-center">
+                    <img src="/img/logo.png" alt="" class="w-[200px]">
+                </div>
+                <div class="col-span-12 md:col-span-4 flex flex-col items-center justify-center">
+                    <div>
+                        <div class="text-xl font-semibold mb-2 md:text-left text-center">Contact Us</div>
+                        <div>
+                            <a href="tel:+88099999999" class="flex items-center justify-center space-x-3 hover:text-white">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>+88099999999</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-5 md:mx-auto my-5 bg-black h-[0.5px]"></div>
+            <div class="text-center">© Madchef. All Right Reserved.</div>
+
+        </section>
+        
+    </body>
+</html>
+
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->

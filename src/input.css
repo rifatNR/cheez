@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+.rubik-font {
+    font-family: 'Rubik', sans-serif;
+}
+
+
+.button-box-shadow {
+    box-shadow: 0 0.475em 0 black;
+}
+.button-box-shadow:active {
+    transform: translate(0, 7px);
+    box-shadow: none;
+}
+.button-style {
+    @apply col-span-12 md:col-span-6 bg-[#FCB61B] rounded-xl px-6 py-3 button-box-shadow
+            border-[2.5px] border-black font-semibold mb-2 text-center
+            flex items-center justify-center space-x-3
+}
+
+.grid-center {
+    @apply grid place-items-center
+}
+.a-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+}
+.transform-center {
+    @apply -translate-x-1/2 -translate-y-1/2
+}
+.admin-container {
+    @apply mt-5 max-w-4xl md:mx-auto mx-5 pb-10
+}
