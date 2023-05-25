@@ -44,3 +44,8 @@ body {
 .admin-container {
     @apply mt-5 max-w-4xl md:mx-auto mx-5 pb-10
 }
+
+.gradient {
+    background: rgb(0,0,0);
+    background: linear-gradient(6deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.333858543417367) 100%);
+}
