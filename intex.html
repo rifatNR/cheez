@@ -10,6 +10,7 @@
         <script src="https://kit.fontawesome.com/f868734c05.js" crossorigin="anonymous"></script>
         <link href="/dist/output.css" rel="stylesheet">
         <link rel="icon" href="/img/favicon.ico">
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyAf20IahpVFqxjpxCSqTwbtoWX7Yu0zoz8" type="text/javascript"></script>
     </head>
     <body>
 
@@ -17,7 +18,18 @@
             <div class="w-full h-[250px] md:h-[500px] overflow-hidden relative">
                 <img src="/img/banner.jpg" alt="Banner" class="w-full a-center">
                 <div class="h-full w-full bg-black a-center opacity-[0.5]"></div>
+                <div class="rubik-font a-center">
+                    <div class="md:text-5xl text-4xl text-white font-extrabold text-strokes text-center">
+                        Cheeziest Pizzas in town
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section id="story" class="max-w-3xl mx-auto my-5">
+            <div class="text-2xl rubik-font text-center font-bold mb-5">Our Story</div>
+
+            
         </section>
 
         <section id="buttons" class="my-5 max-w-lg mx-5 md:mx-auto">
@@ -26,10 +38,20 @@
                     <i class="fa-solid fa-bars text-lg"></i>
                     <div>Menu Items</div>
                 </a>
-                <a href="" class="button-style">
+                <a href="https://mad.delivery/" class="button-style">
                     <i class="fa-sharp fa-solid fa-bell-concierge text-lg"></i>
                     <div>Order Now</div>
                 </a>
+            </div>
+        </section>
+
+        <section id="map_section" class="max-w-3xl mx-auto md:my-14 my-5">
+            <div class="text-2xl rubik-font text-center font-bold mb-5">Locations</div>
+
+            <div class="border border-black rounded-xl overflow-hidden shadow-lg mx-5">
+                <div class="border-8 border-[#FCB61B] bg-[#FCB61B] rounded-xl overflow-hidden">
+                    <div id="map" class="h-[400px] w-full rounded-xl border border-black"></div>
+                </div>
             </div>
         </section>
         
@@ -37,13 +59,13 @@
             <div class="max-w-4xl mx-auto grid grid-cols-12 gap-5">
                 <div class="col-span-12 md:col-span-4 flex flex-col items-center justify-center">
                     <div>
-                        <div class="text-xl font-semibold mb-2 md:text-left text-center">Stay Connected</div>
+                        <div class="text-xl font-semibold mb-2 md:text-left text-center">Get In Touch</div>
                         <div class="flex items-center justify-center md:justify-start space-x-5 md:space-x-3">
-                            <a href=""><i class="fa-brands fa-facebook text-2xl md:text-xl hover:text-white"></i></a>
-                            <a href=""><i class="fa-brands fa-instagram text-2xl md:text-xl hover:text-white"></i></a>
-                            <a href=""><i class="fa-brands fa-tiktok text-2xl md:text-xl hover:text-white"></i></a>
-                            <a href=""><i class="fa-brands fa-twitter text-2xl md:text-xl hover:text-white"></i></a>
-                            <a href=""><i class="fa-brands fa-youtube text-2xl md:text-xl hover:text-white"></i></a>
+                            <a href="https://www.facebook.com/cheezbd" target="_blank"><i class="fa-brands fa-facebook text-2xl md:text-xl hover:text-white"></i></a>
+                            <a href="https://www.instagram.com/cheezbd/" target="_blank"><i class="fa-brands fa-instagram text-2xl md:text-xl hover:text-white"></i></a>
+                            <a href="" target="_blank"><i class="fa-brands fa-tiktok text-2xl md:text-xl hover:text-white"></i></a>
+                            <!-- <a href="" target="_blank"><i class="fa-brands fa-twitter text-2xl md:text-xl hover:text-white"></i></a> -->
+                            <!-- <a href="" target="_blank"><i class="fa-brands fa-youtube text-2xl md:text-xl hover:text-white"></i></a> -->
                         </div>
                     </div>
                 </div>
@@ -64,10 +86,50 @@
             </div>
 
             <div class="max-w-4xl mx-5 md:mx-auto my-5 bg-black h-[0.5px]"></div>
-            <div class="text-center">© Madchef. All Right Reserved.</div>
+            <div class="text-center">© Cheez. All Right Reserved.</div>
 
         </section>
         
+
+        <script type="text/javascript">
+            var locations = [
+              ['Gulshan', 23.77579747553265, 90.4175904865084, 1],
+              ['Banani', 23.79292930587374, 90.40823178650838, 1],
+              ['Bashundhara', 23.808977794570783, 90.43035979999999, 1],
+              ['Dhanmondi', 23.744692176956917, 90.37207813251655, 1],
+              ['Mirpur', 23.8094643676324, 90.36769028465547, 1],
+              ['Uttara', 23.87728130159838, 90.39090545582295, 1],
+              ['Baily Road', 23.742131158218157, 90.40843236931092, 1],
+              ['Khilgaon', 23.753225099815793, 90.4143711269832, 1],
+              ['Wari', 23.715147138931346, 90.41756410504635, 1],
+            ];
+            
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 11,
+              center: new google.maps.LatLng(23.811971089507146, 90.42724497745319), 
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              gestureHandling: "greedy"
+            });
+            
+            var infowindow = new google.maps.InfoWindow();
+        
+            var marker, i;
+            
+            for (i = 0; i < locations.length; i++) {  
+              marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map,
+                icon: 'img/marker2.png',
+              });
+              
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                  infowindow.setContent(locations[i][0]);
+                  infowindow.open(map, marker);
+                }
+              })(marker, i));
+            }
+          </script>
     </body>
 </html>
 
