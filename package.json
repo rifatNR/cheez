@@ -1,9 +1,12 @@
 {
   "scripts": {
     "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "start": "railway serve"
+    "start": "npx http-server"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
   }
 }
