@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CHEEZ</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/f868734c05.js" crossorigin="anonymous"></script>
+        <link href="./dist/output.css" rel="stylesheet">
+        <link rel="icon" href="./img/favicon.ico">
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyAf20IahpVFqxjpxCSqTwbtoWX7Yu0zoz8" type="text/javascript"></script>
+    </head>
+    <body class="bg-[#FCB61B]">
+
+        <div class="col-span-12 md:col-span-4 flex flex-col items-center justify-center mb-10">
+            <img src="./img/logo.png" alt="" class="w-[200px]">
+        </div>
+
+        <div class="moutarde-font px-5 max-w-xl mx-auto" id="pizza_menu">
+            <!-- <div>
+                <div class="text-4xl text-[#94231f] font-extrabold mb-10">CLASSIC PIZZA</div>
+            
+                <div class="mb-5">
+                    <div class="text-2xl text-[#503200] font-extrabold">CLASSIC MARGHERITA</div>
+                    <div class="text-md text-[#392618] font-extrabold mb-2">THE ORIGINAL</div>
+                    <div class="text-lg flex items-center justify-between">
+                        <div><span class="font-extrabold">THICK</span>/THIN <br> THIN</div>
+                        <div class="font-bold">8" <br> 12"</div>
+                        <div>
+                            ৳ <span class="font-extrabold">299</span>
+                            <br>
+                            ৳ <span class="font-extrabold">699</span>
+                        </div>
+                        <div class="font-bold">14" <br> 16"</div>
+                        <div>
+                            ৳ <span class="font-extrabold">849</span>
+                            <br>
+                            ৳ <span class="font-extrabold">999</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="rubik-font p-5 max-w-xl mx-auto">
+            <a href="https://mad.delivery/" target="_blank" class="button-style">
+                <i class="fa-sharp fa-solid fa-bell-concierge text-lg"></i>
+                <div>Order Now</div>
+            </a>
+        </div>
+
+
+        <script>
+            const pizza_menu_div = document.querySelector("#pizza_menu")
+            pizza_menu_div.innerHTML = ""
+
+            const pizzaMenu = [
+                {
+                    name: "CLASSIC PIZZA",
+                    items: [
+                        {
+                            name: "CLASSIC MARGHERITA",
+                            subtitle: "THE ORIGINAL",
+                            size: [8, 12, 14, 16],
+                            price: [299, 699, 849, 999],
+                        },
+                        {
+                            name: "THE PEPPERONIA",
+                            subtitle: "CLASSIC PEPPERONI PIZZA",
+                            size: [8, 12, 14, 16],
+                            price: [349, 849, 1049, 1199],
+                        },
+                        {
+                            name: "ALL BOUT THE SHROOMS",
+                            subtitle: "MUSHROOM FUNGHI PIZZA",
+                            size: [8, 12, 14, 16],
+                            price: [349, 849, 1049, 1199],
+                        },
+                        {
+                            name: "FIERY CORNED BEEF",
+                            subtitle: "WITH SAUSAGE MASH",
+                            size: [8, 12, 14, 16],
+                            price: [379, 899, 1149, 1299],
+                        },
+                        {
+                            name: "BOLOGNESE",
+                            subtitle: "THE ITALIAN CLASSIC",
+                            size: [8, 12, 14, 16],
+                            price: [379, 899, 1149, 1299],
+                        },
+                        {
+                            name: "CHICKEN ALFREDO",
+                            subtitle: "CREAMY WHITE SAUCE PIZZA",
+                            size: [8, 12, 14, 16],
+                            price: [379, 899, 1149, 1299],
+                        },
+                        {
+                            name: "THAI PIE",
+                            subtitle: "MINSED BASIL CHICKEN AND SHRIMP",
+                            size: [8, 12, 14, 16],
+                            price: [399, 1049, 1249, 1399],
+                        },
+                        {
+                            name: "SPICY SHORISHA",
+                            subtitle: "SHRIMP PIZZA",
+                            size: [8, 12, 14, 16],
+                            price: [399, 1049, 1249, 1399],
+                        },
+                    ]
+                },
+                {
+                    name: "GOURMET PIZZA",
+                    items: [
+                        {
+                            name: "THE 4 CHEEZ",
+                            subtitle: "WITH CRISPY BEEF BACON BITS",
+                            size: [8, 12, 14, 16],
+                            price: [399, 1049, 1249, 1399],
+                        },
+                        {
+                            name: "NAGATASTIC BBG",
+                            subtitle: "NAGATASTIC CHICKEN FT. BACON",
+                            size: [8, 12, 14, 16],
+                            price: [429, 1099, 1299, 1449],
+                        },
+                        {
+                            name: "THE SMG",
+                            subtitle: "ALFREDO X PEPPERONI X BACON",
+                            size: [8, 12, 14, 16],
+                            price: [479, 1199, 1499, 1699],
+                        },
+                        {
+                            name: "THE KALA BHUNA",
+                            subtitle: "PIZZA FOR THE MAHARAJAS",
+                            size: [8, 12, 14, 16],
+                            price: [429, 1099, 1399, 1599],
+                        },
+                        {
+                            name: "HOT CRABY PRAWNSTAR",
+                            subtitle: "A TANGY SEAFOOD AFFAIR",
+                            size: [8, 12, 14, 16],
+                            price: [429, 1099, 1349, 1549],
+                        },
+                        {
+                            name: "KOLONGKO THE DISGRACE",
+                            subtitle: "NAGA CHICKEN X PEPPERONI X SAUSAGE",
+                            size: [8, 12, 14, 16],
+                            price: [479, 1199, 1499, 1699],
+                        },
+                        {
+                            name: "SMOKED CHEDDAR TIKKA",
+                            subtitle: "GRILLED CHICKEN X DESI SPICES X CHEDDAR CHEESE",
+                            size: [8, 12, 14, 16],
+                            price: [429, 1099, 1299, 1499],
+                        },
+                    ]
+                },
+                {
+                    name: "MORE FOR LESS",
+                    items: [
+                        {
+                            name: "LIQUID GOLD",
+                            subtitle: "FOR THE CHEESE LOVERS",
+                            size: [8, 12, 14, 16],
+                            price: [199, 449, 619, 699],
+                        },
+                        {
+                            name: "SPICY SAUSAGE",
+                            subtitle: "ONLY SAUSAGE FEST YOU WANT",
+                            size: [8, 12, 14, 16],
+                            price: [239, 499, 729, 799],
+                        },
+                        {
+                            name: "CREAMY CHICKEN AND SAUSAGE",
+                            subtitle: "IT IS WHAT IT IS",
+                            size: [8, 12, 14, 16],
+                            price: [279, 649, 829, 949],
+                        },
+                    ]
+                },
+            ]
+
+            const priceFormat = (price = 0) => {
+                if (typeof price !== 'number') {
+                    return price; // Return the input as it is if it's not a number
+                }
+                
+                if (price >= 1000 && price < 10000) {
+                    return price.toLocaleString(); // Add comma if price is 4-digit
+                }
+                
+                return price.toString(); // Convert the price to string if it doesn't meet the condition
+            }
+
+            const renderItem = (item) => {
+                
+                const new_el = document.createElement('div')
+                
+                const new_el_content = `
+                    <div class="mb-5">
+                        <div class="text-2xl text-[#503200] font-extrabold">${item.name}</div>
+                        <div class="text-sm text-[#392618] font-extrabold mb-2">${item.subtitle}</div>
+                        <div class="text-lg flex items-center justify-between">
+                            <div><span class="font-extrabold">THICK</span>/THIN <br> THIN</div>
+                            <div class="font-bold">8" <br> 12"</div>
+                            <div>
+                                ৳ <span class="font-extrabold">${priceFormat(item.price[0])}</span>
+                                <br>
+                                ৳ <span class="font-extrabold">${priceFormat(item.price[1])}</span>
+                            </div>
+                            <div class="font-bold">14" <br> 16"</div>
+                            <div>
+                                ৳ <span class="font-extrabold">${priceFormat(item.price[2])}</span>
+                                <br>
+                                ৳ <span class="font-extrabold">${priceFormat(item.price[3])}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="max-w-3xl md:mx-auto my-10 flex items-center justify-between space-x-3">
+                        <div class="h-[0.25px] flex-1 bg-black"></div>
+                        <div class="h-2 w-2 rounded-full bg-black"></div>
+                        <div class="h-2 w-2 rounded-full bg-black"></div>
+                        <div class="h-2 w-2 rounded-full bg-black"></div>
+                        <div class="h-[0.25px] flex-1 bg-black"></div>
+                    </div>
+                `
+
+                new_el.innerHTML = new_el_content
+
+                pizza_menu_div.appendChild(new_el)
+            }
+
+            const renderMenu = () => {
+                pizzaMenu.forEach(cat => {
+                    const new_el = document.createElement('div')
+                    const new_el_content = `<div class="text-4xl text-[#94231f] font-extrabold my-10">${cat.name}</div>`
+                    new_el.innerHTML = new_el_content
+                    pizza_menu_div.appendChild(new_el)
+
+                    cat.items.forEach(item => {
+                        renderItem(item)
+                    });
+                });
+            }
+
+            renderMenu()
+            
+        </script>
+        
+    </body>
+</html>
+
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->

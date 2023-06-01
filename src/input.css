@@ -5,11 +5,17 @@
 @tailwind utilities;
 
 
+@font-face { font-family: Moutarde; src: url('/font/Moutarde.otf'); }
+
 body {
     font-family: 'Nunito', sans-serif;
 }
 .rubik-font {
     font-family: 'Rubik', sans-serif;
+}
+.moutarde-font {
+    font-family: 'Moutarde', sans-serif;
+    letter-spacing: 1px;
 }
 
 
